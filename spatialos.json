@@ -1,0 +1,11 @@
+{
+    "name": "your_console_project_name",
+    "project_version": "1.0.0",
+    "sdk_version": "14.6.1",
+    "dependencies": [
+        {
+            "name": "standard_library",
+            "version": "14.6.1"
+        }
+    ]
+}

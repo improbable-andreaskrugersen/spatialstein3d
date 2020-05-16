@@ -1,2 +1,7 @@
+.spatialos/
 .vscode/
 bazel-*
+
+build/
+generated_code/*/
+logs/

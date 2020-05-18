@@ -3,7 +3,11 @@
         "tasks_filename": "build.json"
     },
     "bridge": {
-        "worker_attribute_set": {}
+        "worker_attribute_set": {
+            "attributes": [
+                "client"
+            ]
+        }
     },
     "external": {
         "local": {

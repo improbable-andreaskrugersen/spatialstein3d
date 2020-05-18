@@ -4,5 +4,15 @@
     },
     "bridge": {
         "worker_attribute_set": {}
+    },
+    "external": {
+        "local": {
+            "run_type": "EXECUTABLE_ZIP",
+            "linux": {
+                "artifact_name": "client@Linux.zip",
+                "command": "./spatialstein3d",
+                "arguments": []
+            }
+        }
     }
 }

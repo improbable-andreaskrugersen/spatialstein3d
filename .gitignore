@@ -3,5 +3,6 @@
 bazel-*
 
 build/
+dependencies/worker_sdk/*/
 generated_code/*/
 logs/

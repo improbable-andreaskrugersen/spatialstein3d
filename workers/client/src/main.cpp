@@ -5,6 +5,7 @@
 #include "utils.hpp"
 #include "worldmap.hpp"
 #include <Eigen/Dense>
+#include <improbable/worker.h>
 #include <iostream>
 #include <string>
 
@@ -197,6 +198,8 @@ void pollInput(Input& input) {
   }
 }
 
+using AllComponents = worker::Components<>;
+
 int main() {
 
   RayCasterRenderer* pRenderer = init();
@@ -214,6 +217,29 @@ int main() {
 
   pRenderer->setFloorTextureIndex(3);
   pRenderer->setCeilingTextureIndex(6);
+
+  AllComponents allComponents{};
+
+  worker::LogsinkParameters logsink;
+  logsink.Type = worker::LogsinkType::kStdout;
+  logsink.FilterParameters.Categories = worker::LogCategory::kApi;
+  logsink.FilterParameters.Level = worker::LogLevel::kInfo;
+
+  worker::ConnectionParameters params;
+  params.WorkerType = "client";
+  params.Network.ConnectionType = worker::NetworkConnectionType::kModularKcp;
+  params.Network.UseExternalIp = false;
+  params.Logsinks = {logsink};
+  params.EnableLoggingAtStartup = true;
+
+  worker::Connection connection =
+      worker::Connection::ConnectAsync(allComponents, "localhost", 7777,
+                                       "client", params)
+          .Get();
+  if (connection.GetConnectionStatusCode() ==
+      worker::ConnectionStatusCode::kSuccess) {
+    std::cout << "Connection successful" << std::endl;
+  }
 
   WorldMap world;
 

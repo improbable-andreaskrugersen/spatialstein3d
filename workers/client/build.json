@@ -26,6 +26,13 @@
                     ]
                 },
                 {
+                    "name": "Install dependencies",
+                    "arguments": [
+                        "package",
+                        "unpack"
+                    ]
+                },
+                {
                     "name": "Client worker",
                     "command": "bazel",
                     "arguments": [
@@ -34,6 +41,10 @@
                         "-c",
                         "opt"
                     ]
+                },
+                {
+                    "name": "Assembly",
+                    "command": "./make_zip.sh"
                 }
             ]
         },
@@ -48,6 +59,13 @@
                         "--cachePath=../../.spatialos/schema_codegen_cache",
                         "../../.spatialos/schema_codegen_proto",
                         "../../generated_code/cpp/schema"
+                    ]
+                },
+                {
+                    "name": "Dependencies",
+                    "arguments": [
+                        "package",
+                        "clean"
                     ]
                 },
                 {

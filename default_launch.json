@@ -1,0 +1,13 @@
+{
+    "template": "w2_r0500_e5",
+    "world": {
+        "chunk_edge_length_meters": 50,
+        "snapshots": {
+            "snapshot_write_period_seconds": 0
+        },
+        "dimensions": {
+            "x_meters": 50,
+            "z_meters": 50
+        }
+    }
+}

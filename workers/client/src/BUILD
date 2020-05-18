@@ -1,4 +1,7 @@
-SHARED_DEPS = ["//dependencies/eigen:eigen"]
+SHARED_DEPS = [
+    "//dependencies/eigen:eigen",
+    "//dependencies/worker_sdk:worker_sdk",
+]
 
 cc_binary(
     name = "spatialstein3d",

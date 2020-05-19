@@ -10,12 +10,16 @@
             ]
         },
         {
-            "path": "../../dependencies/worker_sdk/linux/lib",
+            "path": "../../dependencies/worker_sdk/lib",
             "type": "worker_sdk",
             "packages": [
                 {
                     "name": "c-static-x86_64-gcc510_pic-linux",
                     "platform": "linux"
+                },
+                {
+                    "name": "c-static-x86_64-vc141_md-win32",
+                    "platform": "windows"
                 }
             ]
         }

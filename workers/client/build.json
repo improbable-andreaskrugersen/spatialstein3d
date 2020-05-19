@@ -44,7 +44,16 @@
                 },
                 {
                     "name": "Assembly",
-                    "command": "./make_zip.sh"
+                    "command": "./make_zip.sh",
+                    "target": "linux"
+                },
+                {
+                    "name": "Assembly",
+                    "command": "powershell",
+                    "arguments": [
+                        ".\\make_zip.ps1"
+                    ],
+                    "target": "windows"
                 }
             ]
         },

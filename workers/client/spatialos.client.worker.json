@@ -16,6 +16,11 @@
                 "artifact_name": "client@Linux.zip",
                 "command": "./spatialstein3d",
                 "arguments": []
+            },
+            "windows": {
+                "artifact_name": "client@Windows.zip",
+                "command": "./spatialstein3d.exe",
+                "arguments": []
             }
         }
     }
